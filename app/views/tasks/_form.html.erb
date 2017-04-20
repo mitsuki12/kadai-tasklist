@@ -11,22 +11,28 @@
   
   <%= f.label :status, 'ステータス' %>
   <%= f.text_field :status, class: "form-control"  %>
-
-  <%= f.label :content, 'タスク' %>
-  <%= f.text_field :content, class: "form-control" %>
- 
-  <%= f.submit '投稿' %>
-
-  <div class="container">
+   <body>
     <div class="row">
-      <div class="col-xs-12"></div>
-      <div class="col-sm-offset-2 col-sm-8"></div>
+      <div class="col-xs-12">status</div>
+      <div class="col-sm-offset-2 col-sm-8">status</div>
       <div class="col-md-offset-2 col-sm-8"></div>
       <div class="col-lg-offset-3 col-sm-6"></div>
     </div>
-  </div>
+   </body>
 
+  <%= f.label :content, 'タスク' %>
+  <%= f.text_field :content, class: "form-control" %>
+  <body>
+    <div class="row">
+      <div class="col-xs-12">content</div>
+      <div class="col-sm-offset-2 col-sm-8">content</div>
+      <div class="col-md-offset-2 col-sm-8"></div>
+      <div class="col-lg-offset-3 col-sm-6"></div>
+    </div>
+   </body>
 
+  <%= f.submit '投稿' %>
 
+  
 <% end %>
 
