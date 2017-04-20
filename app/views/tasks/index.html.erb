@@ -1,82 +1,39 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
   <div class="navbar-header">
-    <!-- 横幅が狭い時に出るハンバーガーボタン -->
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    </button>
-
-    <!-- ホームへ戻るリンク。ブランドロゴなどを置く。 -->
-    <a class="navbar-brand" href="#">Task</a>
-  </div>
-
-  <!-- メニュー項目 -->
-  <div id="navbar" class="table table-striped">
+  
+   <!-- メニュー項目 -->
+   <div id="navbar" class="table table-striped">
     <ul class="nav navbar-nav">
     <li class="active"><a href="#"><%= link_to '新規タスクの投稿', new_task_path %></a></li>
-    
     </ul>
+   </div>
   </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Bootstrap Template</title>
+<h1>タスク一覧</h1>
 
-    <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Bootstrap JavaScript-->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  </head>
-  <body>
-    <div class="container">
-      <p>タスク一覧</p>
-    </div>
-  </body>
-</html>
-
-
-<ul>
-  <table class="table table-striped">
-  <% @tasks.each do |task| %>
-    <li><%= link_to task.id, task%> : <%= task.content %> : <%=task.status %> > <%= task.content %></li>
-  <% end %>  
-</ul>
-
-<h1>メッセージ一覧</h1>
-
-<% if @messages.any? %>
+<% if @tasks.any? %>
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>id</th>
-        <th>タイトル</th>
-        <th>メッセージ</th>
+        <th>id : ステータス : タスク</th>
+        
       </tr>
     </thead>
     <tbody>
-      <% @messages.each do |message| %>
+      <% @tasks.each do |task| %>
         <tr>
-          <td><%= link_to message.id, message %></td>
-          <td><%= message.title %></td>
-          <td><%= message.content %></td>
+           <td><%= link_to task.id, task%> : <%= task.content %> : <%=task.status %> > <%= task.content %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
   <div>
-    <%= paginate @messages %>
   </div>
 <% end %>
 
-<%= link_to '新規メッセージの投稿', new_message_path, class: "btn btn-primary" %>
+
+
