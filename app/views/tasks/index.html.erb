@@ -1,16 +1,3 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-  <div class="navbar-header">
-  
-   <!-- メニュー項目 -->
-   <div id="navbar" class="table table-striped">
-    <ul class="nav navbar-nav">
-    <li class="active"><a href="#"><%= link_to '新規タスクの投稿', new_task_path %></a></li>
-    </ul>
-   </div>
-  </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
 
 
 <h1>タスク一覧</h1>
@@ -37,3 +24,4 @@
 
 
 
+<%= link_to '新規タスクの投稿', new_task_path, class: "btn btn-primary" %>
